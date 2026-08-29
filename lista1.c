@@ -164,5 +164,27 @@ void main()
 */
 
 
+/*
+5)
+*/
+
+/*
+void main()
+{
+    int a = 3;
+    float b = a/2.0;
+    float c = b + 3.1;
+
+    printf("%.1f ", c);
+
+    int b2 = a/2;
+    c = b2 + 3.1;
+    printf("%.1f ", c);
+
+    int c3 = b2 + 3.1;
+    printf("%d ", c3);
+}
+*/
+
 
 
