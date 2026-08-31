@@ -1,6 +1,6 @@
 #include <stdio.h>
 /*
-1. Fazer um programa para receber um n˙mero inteiro de segundos do usu·rio e imprimir
+1. Fazer um programa para receber um n√∫mero inteiro de segundos do usu√°rio e imprimir
 a quantidade correspondente em horas, minutos e segundos.
 */
 
@@ -9,100 +9,100 @@ a quantidade correspondente em horas, minutos e segundos.
 void main()
 {
     int s,h,m = 0;
-
+    
     printf("segundos totais: ");
     scanf("%d", &s);
-    printf("\n\n%d segundos s„o ", s);
-
+    printf("\n\n%d segundos s√£o ", s);
+    
     h = s/3600;
     s = s%3600;
-
+    
     m = s/60;
     s = s%60;
-
+    
     printf("%d horas, %d minutos e %d segundos.", h,m,s);
-
+    
 }
 */
 
 
 /*
-2. Fazer um programa que recebe 3 valores inteiros do usu·rio e mostra o maior deles, o
-menor deles, os valores pares e a mÈdia.
+2. Fazer um programa que recebe 3 valores inteiros do usu√°rio e mostra o maior deles, o
+menor deles, os valores pares e a m√©dia.
 */
 /*
 void main()
 {
-
+    
     int n[3];
     int evens[3];
     int min;
     int max = 0;
     float sum,avg = 0;
-
-
+    
+    
     for(int i=0;i<3;i++)
     {
-        printf("%d∫ inteiro: ", i+1);
+        printf("%d¬∫ inteiro: ", i+1);
         scanf("%d",&n[i]);
-
+        
         sum+=n[i];
-
+        
         if(n[i] > max)
             max = n[i];
-
-        if(n[i] < min || i == 0) // se for menor que o antigo menor OU for a primeira iteraÁ„o
+      
+        if(n[i] < min || i == 0) // se for menor que o antigo menor OU for a primeira itera√ß√£o
             min = n[i];
     }
     printf("\nmaior: %d, menor: %d", max,min);
-
+    
     for(int i=0;i<3;i++)
     {
         if(n[i]%2==0)
-            printf("\n%d È par",n[i]);
+            printf("\n%d √© par",n[i]);
     }
-
+    
     avg = sum/3;
-    printf("\nmÈdia: %f",avg);
+    printf("\nm√©dia: %f",avg);
 }
 */
 
 
 /*
-3. Fazer um programa que recebe um sÌmbolo de operaÁ„o do usu·rio (+, -, / ou *) e dois
-n˙meros reais. O programa deve retornar o resultado da operaÁ„o recebida sobre estes
-dois n˙meros.
+3. Fazer um programa que recebe um s√≠mbolo de opera√ß√£o do usu√°rio (+, -, / ou *) e dois
+n√∫meros reais. O programa deve retornar o resultado da opera√ß√£o recebida sobre estes
+dois n√∫meros.
 */
 /*
 void main()
 {
     char c;
     float a,b;
-
-    printf("operaÁ„o (+, -, / ou *): ");
+    
+    printf("opera√ß√£o (+, -, / ou *): ");
     scanf("%c", &c);
-
-    printf("valores reais separados por espaÁo: ");
+    
+    printf("valores reais separados por espa√ßo: ");
     scanf("%f %f",&a,&b);
-
+    
     switch(c)
     {
         case '+':printf("%f + %f = %f", a,b,a+b); break;
         case '-':printf("%f - %f = %f", a,b,a-b); break;
         case '/':printf("%f / %f = %f", a,b,a/b); break;
         case '*':printf("%f * %f = %f", a,b,a*b); break;
-        default: printf("operaÁ„o nao existe");
+        default: printf("opera√ß√£o nao existe");
     }
 }
 */
 
 /*
-4. Um funcion·rio da UFF precisa validar as notas de 3 provas fornecidas por um
-professor e indicar: a mÈdia, se est· aprovado/reprovado e se tem direito de realizar a VS.
-Inicialmente, faÁa um programa que recebe como entrada as 3 notas e mostre os
-resultados solicitados. Posteriormente, coloque o cÛdigo de c·lculo da mÈdia em uma
-funÁ„o. Em um passo seguinte, realize os controles necess·rios para n„o receber notas
-inv·lidas.
+4. Um funcion√°rio da UFF precisa validar as notas de 3 provas fornecidas por um
+professor e indicar: a m√©dia, se est√° aprovado/reprovado e se tem direito de realizar a VS.
+Inicialmente, fa√ßa um programa que recebe como entrada as 3 notas e mostre os
+resultados solicitados. Posteriormente, coloque o c√≥digo de c√°lculo da m√©dia em uma
+fun√ß√£o. Em um passo seguinte, realize os controles necess√°rios para n√£o receber notas
+inv√°lidas.
 */
 
 /*
@@ -116,46 +116,46 @@ void main()
     float p1,p2,p3;
     float avg;
     int valid;
-
+    
     do
-    {
-        valid = 1; //a principio, toda nota È v·lida, se for inv·lida, volta no while
+    {   
+        valid = 1; //a principio, toda nota √© v√°lida, se for inv√°lida, volta no while
         printf("nota da p1: ");
         scanf("%f", &p1);
         printf("nota da p2: ");
         scanf("%f", &p2);
         printf("nota da p3: ");
         scanf("%f", &p3);
-
-
-
+        
+        
+        
         if(p1 < 0 || p1 > 10)
         {
-            printf("Valor da p1 inv·lido.\n");
+            printf("Valor da p1 inv√°lido.\n");
             valid = 0;
         }
         if(p2 < 0 || p2 > 10)
         {
-            printf("Valor da p2 inv·lido.\n");
+            printf("Valor da p2 inv√°lido.\n");
             valid = 0;
         }
         if(p3 < 0 || p3 > 10)
         {
-            printf("Valor da p3 inv·lido.\n");
+            printf("Valor da p3 inv√°lido.\n");
             valid = 0;
-        }
-
-
+        }    
+        
+        
     }while(valid != 1);
-
+    
     avg = calcAvg(p1,p2,p3);
-    printf("MÈdia: %f", avg);
-
+    printf("M√©dia: %f", avg);
+    
     if(avg>6)
         printf("\nAprovado");
     else
         printf("\nReprovado");
-
+    
     if(4.0 <= avg <= 5.9)
     {
         printf("\nApto para VS");
@@ -174,17 +174,70 @@ void main()
     int a = 3;
     float b = a/2.0;
     float c = b + 3.1;
-
+    
     printf("%.1f ", c);
-
+    
     int b2 = a/2;
     c = b2 + 3.1;
     printf("%.1f ", c);
-
+    
     int c3 = b2 + 3.1;
     printf("%d ", c3);
 }
 */
 
 
+/*
+6.
+Implemente uma fun√ß√£o que calcule as ra√≠zes de uma equa√ß√£o do segundo grau, do
+tipo ax2 + bx + c = 0. Observa√ß√£o: para o c√°lculo da raiz quadrada de um n√∫mero, utilize
+a fun√ß√£o sqrt. Consulte a documenta√ß√£o de como us√°-la no programa.
+*/
 
+
+/*
+#include <math.h>
+
+float calcDelta(float a, float b, float c){
+    return (b*b) - 4*a*c;
+}
+
+
+float raizPos(float delta, float a,float b){
+    return (-b + sqrt(delta))/(2*a);
+}
+
+
+float raizNeg(float delta, float a,float b){
+    return (-b - sqrt(delta))/(2*a);
+}
+
+
+void main()
+{
+    float a,b,c;
+    float delta, r1,r2;
+
+    scanf("%f %f %f", &a, &b, &c);
+    
+    delta = calcDelta(a,b,c);
+    
+    
+    if(delta < 0)
+    {
+        printf("Delta %f < 0, a fun√ß√£o n√£o possui ra√≠zes reais.",delta);
+    }
+    else
+    {
+        r1 = raizPos(delta, a,b);
+        r2 = raizNeg(delta, a,b);
+        if(delta > 0)
+        {
+            printf("Delta %f > 0, ra√≠zes reais diferentes:\nx¬π = %f\nx¬≤ = %f",delta,r1,r2);
+        }
+        else
+            printf("Delta %f = 0, uma √∫nica ra√≠z real:\nx¬π = %f\nx¬≤ = %f",delta,r1,r2);
+        
+    }
+}
+*/
