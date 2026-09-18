@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 /*
 1. Fazer um programa para receber um número inteiro de segundos do usuário e imprimir
 a quantidade correspondente em horas, minutos e segundos.
@@ -239,5 +240,82 @@ void main()
             printf("Delta %f = 0, uma única raíz real:\nx¹ = %f\nx² = %f",delta,r1,r2);
         
     }
+}
+*/
+
+
+/*
+7. Faça operações de arredondamento para cima e para baixo com números float. Dica:
+Pesquise o documento “Cartão de Referência da Linguagem C” para encontrar quais
+funções devem ser usadas no programa.
+*/
+
+/*
+void main()
+{
+    float n = 5.25;
+    float cimaN = ceil(n);
+    float baixoN = floor(n);
+    
+    printf("numero base: %f\nnumero arredondado pra cima: %.0f\nnumero arredondado pra baixo: %.0f",n, cimaN, baixoN);
+}
+*/
+
+/*
+8. Considerando a existência de notas (cédulas) nos valores R$ 100, R$ 50, R$ 20, R$ 10,
+R$ 5, R$ 2 e R$ 1, escreva um programa que capture um valor inteiro em reais (R$) e
+determine o menor número de notas para se obter o montante fornecido. A função deve
+ter o seguinte protótipo:
+int total_de_notas(int valor);
+*/
+
+/*
+int total_de_notas(int valor);
+
+void main()
+{
+    int total;
+    int notas;
+    
+    printf("total inteiro em reais: R$");
+    scanf("%d",&total);
+    
+    notas = total_de_notas(total);
+    
+    printf("\n\nMínimo de notas: %d para R$%d",notas, total);
+}
+
+int total_de_notas(int valor)
+{
+    int notas = 0;
+    
+    notas += (valor/100);
+    printf("\n%d notas de 100\n",(valor/100));
+    valor -= (valor/100) * 100;
+    
+    notas += (valor/50);
+    printf("%d notas de 50\n",(valor/50));
+    valor -= (valor/50) * 50;
+    
+    notas += (valor/20);
+    printf("%d notas de 20\n",(valor/20));
+    valor -= (valor/20) * 20;
+    
+    notas += (valor/10);
+    printf("%d notas de 10\n",(valor/10));
+    valor -= (valor/10)*10;
+    
+    notas += (valor/5);
+    printf("%d notas de 5\n",(valor/5));
+    valor -= (valor/5)*5;
+    
+    notas += (valor/2);
+    printf("%d notas de 2\n",(valor/2));
+    valor -= (valor/2)*2;
+    
+    notas += valor; //notas de 1
+    printf("%d notas de 1\n",valor);
+    
+    return notas;
 }
 */
