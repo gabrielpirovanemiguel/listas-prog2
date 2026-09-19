@@ -1,4 +1,4 @@
-//Números de 01 até 07
+//Números de 01 até 09
 
 1)
 #include <stdio.h>
@@ -262,4 +262,138 @@ void CamelCase(char *s) {
 }
 
 
+8)
 
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+    int len;
+    int *vet;
+    int l;
+    int r;
+
+    do
+    {
+        printf("tamanho do vetor (par): ");
+        scanf("%d",&len);
+    } while (len % 2 != 0);
+
+    vet = (int *) malloc(len*sizeof(int));
+    if(vet ==NULL)
+        exit(1);
+    
+    for(int i=0;i<len;i++)
+    {
+        printf("%do valor: ",i+1);
+        scanf("%d",vet+i);
+    }
+    
+    printf("\n\n");
+    for(int i=0;i<len/2;i++)
+    {
+        l = *(vet+i); //left
+        r = *((vet+len-1)-i); //right
+
+        printf("%d - %d\n",l,r);
+    }
+    free(vet);
+}
+
+
+9)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void trocarVals(int *vet, int len);
+
+void listVector(int *vet,int len);
+
+int ind(int *vet, int len, int num);
+
+int main()
+{
+
+    int *vet;
+    int len=7;
+    int num;
+
+    vet = (int *) malloc(len*sizeof(int));
+
+    if(vet==NULL)
+        exit(1);
+
+    for(int i=0;i<len;i++){
+        printf("%do valor: ",i+1);
+        scanf("%d",vet+i);
+    }
+
+    listVector(vet,len);
+
+
+    printf("\n\nnumero quer procurar no vetor: ");
+    scanf("%d",&num);
+
+    int indice = ind(vet,len,num);
+
+    indice != -1 ? printf("index do numero %d: (%d)", num, indice) :  printf("\n%d nao encontrado na lista", num);
+
+    trocarVals(vet,len);
+
+    listVector(vet,len);
+
+    free(vet);
+    return 0;
+}
+
+
+void listVector(int *vet,int len)
+{
+    printf("\n\nvalores e indices:\n");
+    for(int i=0;i<len;i++)
+    {
+        printf(" %d    |     %d\n",*(vet+i),i);    
+    }
+    printf("\n\n");
+}
+
+
+int ind(int *vet, int len, int num)
+{
+    int j = -1; //valor padrao pra caso nao encontre
+
+    for (int i=0;i<len;i++)
+    {
+        if(*(vet+i) == num)
+        {
+            j = i; 
+            break; //retornar o ind da primeira ocorrencia igual python
+        }
+    }
+    return j;
+}
+
+void trocarVals(int *vet, int len)
+{
+    int *aux;
+
+    aux = (int *) malloc(len*sizeof(int));
+
+    if(aux==NULL)
+        exit(1);
+    
+    for(int i=0;i<len;i++)
+    {
+        if(i==0)
+            aux[i] = vet[i];
+        else
+            aux[i] = aux[i-1] + vet[i]; //soma do anterior + o atual
+    }
+    for(int i=0;i<len;i++)
+    {
+        vet[i] = aux[i];
+    }
+    free(aux);
+}
